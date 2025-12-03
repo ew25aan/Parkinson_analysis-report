@@ -1,0 +1,40 @@
+Summary statistics:
+      Group   N     Mean       SD  Median     Min     Max
+1   Healthy  48 181.9378 52.73107 198.996 110.739 260.105
+2 Parkinson 147 145.1808 32.34805 145.174  88.333 223.361
+
+Shapiro-Wilk tests:
+
+	Shapiro-Wilk normality test
+
+data:  x1
+W = 0.84604, p-value = 1.71e-05
+
+
+	Shapiro-Wilk normality test
+
+data:  x2
+W = 0.96095, p-value = 0.0003507
+
+
+Levene's test:
+Levene's Test for Homogeneity of Variance (center = median)
+       Df F value  Pr(>F)    
+group   1  25.656 9.5e-07 ***
+      193                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+T-test:
+
+	Welch Two Sample t-test
+
+data:  df[[mdvp_col]] by df[[status_col]]
+t = 4.5575, df = 58.974, p-value = 2.658e-05
+alternative hypothesis: true difference in means between group Healthy and group Parkinson is not equal to 0
+95 percent confidence interval:
+ 20.61851 52.89550
+sample estimates:
+  mean in group Healthy mean in group Parkinson 
+               181.9378                145.1808 
+
