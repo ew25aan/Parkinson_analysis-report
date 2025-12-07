@@ -1,6 +1,6 @@
 
 # Edit csv_path before running
-csv_path <- "Parkinsson disease.csv"
+csv_path <- "C:/Users/admin/Downloads/archive/Parkinsson disease.csv"
 
 # load required package
 if (!requireNamespace("car", quietly = TRUE)) install.packages("car", repos = "https://cloud.r-project.org")
