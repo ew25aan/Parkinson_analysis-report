@@ -1,6 +1,6 @@
 
 # Edit csv_path before running
-csv_path <- "C:/Users/admin/Downloads/archive/Parkinsson disease.csv"
+csv_path <- "Parkinsson disease.csv"
 
 # load required package
 if (!requireNamespace("car", quietly = TRUE)) install.packages("car", repos = "https://cloud.r-project.org")
@@ -74,6 +74,7 @@ sh_2 <- if (length(x2) >= 3 && length(x2) <= 5000) tryCatch(shapiro.test(x2), er
 
 levene_res <- tryCatch(leveneTest(df[[mdvp_col]] ~ df[[status_col]]), error = function(e) e)
 
+
 # decide t-test type
 use_welch <- TRUE
 if (is.data.frame(levene_res)) {
@@ -86,6 +87,7 @@ t_res <- if (use_welch) {
 } else {
   t.test(df[[mdvp_col]] ~ df[[status_col]], var.equal = TRUE)
 }
+
 
 # print and save outputs
 cat("\nShapiro-Wilk (group 1):\n"); print(sh_1)
